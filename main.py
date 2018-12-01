@@ -26,9 +26,10 @@ model = simple_cnn_model((32, 32, 3))
 model.fit(x=x_train, y=y_train,
           epochs=15, batch_size=256)
 model.evaluate(x=x_test, y=y_test)
-model_path = os.path.join('models/saved', 'keras_simple_cnn_cifar10.h5')
+model_path = 'models/saved/keras_simple_cnn_cifar10.h5'
 model.save(model_path)
 
 model = cifar10_cnn()
 model.load_weights('models/saved/keras_cifar10_trained_model.h5')
 model.evaluate(x=x_test, y=y_test)
+
